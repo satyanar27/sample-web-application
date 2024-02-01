@@ -1,0 +1,37 @@
+pipeline:
+  identifier: Build_satyanar27_sample_web_application_1706798769234
+  name: Build sample-web-application
+  orgIdentifier: default
+  projectIdentifier: Demo1
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1706798712055
+        repoName: satyanar27/sample-web-application
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: dockerbuild
+                  name: docker_build
+                  spec:
+                    image: plugins/docker
+                    settings:
+                      dry_run: "true"
+                      repo: hello/world
+                      tags: latest
+                  timeout: ""
+                  type: Plugin
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
