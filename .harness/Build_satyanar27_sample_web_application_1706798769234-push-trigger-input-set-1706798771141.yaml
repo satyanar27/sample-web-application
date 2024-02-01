@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_satyanar27_sample_web_application_1706798769234-push-trigger-input-set
+  identifier: Build_satyanar27_sample_web_application_1706798769234pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Demo1
+  pipeline:
+    identifier: Build_satyanar27_sample_web_application_1706798769234
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
